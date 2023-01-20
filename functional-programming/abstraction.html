@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functional Programming | Abstraction</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/js.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <a href="/">Home</a>
+        <h1>Abstraction</h1>
+        <p>
+          Abstraction is the process of defining general format for different
+          methods in a program.
+        </p>
+        <br />
+        <p>
+          For example if we consider the following program that applies the
+          square twice on a given number, we can create an abstraction for that
+          function in the described manner compare to creating a method which
+          apply the same function twice on a given number.
+        </p>
+        <br />
+        <pre>
+        <code class="language-javascript">
+          function square(n) {
+            return n * n;
+          }
+          
+          function applySquareTwice(n) {
+            return square(square(n));
+          }
+          
+          applySquareTwice(2); // 16
+          
+          // Abstracted Function
+          
+          function applyTwice(n, f) {
+            return f(f(n));
+          }
+          
+          applyTwice(2, square); // 16
+        </code>
+        </pre>
+      </section>
+    </main>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
